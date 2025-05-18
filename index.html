@@ -96,9 +96,6 @@
     <label>Cantidad apostada (€)
       <input type="number" step="0.01" id="cantidad" required>
     </label>
-    <label>Deporte
-      <input type="text" id="deporte" required>
-    </label>
     <label>
       <input type="checkbox" id="super"> Súper aumento
     </label>
@@ -151,7 +148,6 @@
         nombre: document.getElementById('nombre').value,
         cuota: parseFloat(document.getElementById('cuota').value),
         cantidad: parseFloat(document.getElementById('cantidad').value),
-        deporte: document.getElementById('deporte').value,
         super: document.getElementById('super').checked,
         resultado: document.getElementById('resultado').value
       };
