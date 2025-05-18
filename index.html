@@ -122,6 +122,9 @@
     let apuestas = JSON.parse(localStorage.getItem('apuestas')) || [];
 
     function actualizarResumen() {
+      apuestas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+      localStorage.setItem('apuestas', JSON.stringify(apuestas));
+
       let aciertos = 0;
       let fallos = 0;
       let profit = 0;
@@ -154,7 +157,6 @@
       };
 
       apuestas.push(nuevaApuesta);
-      localStorage.setItem('apuestas', JSON.stringify(apuestas));
       actualizarResumen();
       document.getElementById('betForm').reset();
     });
